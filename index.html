@@ -62,8 +62,32 @@ h1{font:inherit}
 .step p{font-weight:500;font-size:15px;line-height:1.55;margin-top:4px}
 .stack{font:500 12px/1.6 var(--mono);color:var(--muted);margin-top:6px}
 
+/* Produk */
+.intro{font-weight:500;font-size:15px;line-height:1.55;margin-top:10px}
+.prods{margin-top:14px;display:flex;flex-direction:column;gap:12px}
+.prod{display:block;background:var(--card);border:2px solid var(--ink);border-radius:10px;padding:16px 18px;color:var(--ink-2);text-decoration:none;transition:transform .12s}
+.prod:hover{transform:translateY(-2px)}
+.prod .for{font:500 12px/1.4 var(--mono);color:var(--teal-d)}
+.prod h3{font:800 18px/1.3 Montserrat,sans-serif;color:var(--ink);margin-top:4px}
+.prod p{font-weight:500;font-size:15px;line-height:1.55;margin-top:4px}
+.prod .go{display:inline-block;font:800 14px/1.3 Montserrat,sans-serif;color:var(--teal-d);margin-top:10px}
+
 footer{margin-top:40px;text-align:center;font:500 12px/1.6 var(--mono);color:var(--muted)}
-@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+/* Desktop */
+@media (min-width:960px){
+  .wrap{max-width:1040px;padding:0 32px}
+  .hero{padding-top:56px;display:grid;grid-template-columns:1fr 400px;grid-template-areas:"id cta" "lead cta";column-gap:48px;align-items:center}
+  .id{grid-area:id}
+  .lead{grid-area:lead;font-size:24px}
+  .cta{grid-area:cta;margin-top:0}
+  .sec{margin-top:56px}
+  .prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr))}
+  .prod{display:flex;flex-direction:column}
+  .prod .go{margin-top:auto;padding-top:10px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:56px;align-items:start}
+  .duo .sec{margin-top:0}
+}
+@media (prefers-reduced-motion:reduce){.btn,.prod{transition:none}.btn:hover,.prod:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -84,6 +108,27 @@ footer{margin-top:40px;text-align:center;font:500 12px/1.6 var(--mono);color:var
   </div>
 </header>
 
+<section class="sec" aria-labelledby="produk">
+  <h2 class="label" id="produk">Produk</h2>
+  <p class="intro">Semua produkku punya satu arah: bantu kamu melihat angka keuanganmu sendiri dengan jelas. Keputusannya tetap di tanganmu. Mulai dari yang gratis, lalu pilih yang sesuai masalahmu.</p>
+  <div class="prods">
+    <a class="prod" href="/alat-gratis/">
+      <span class="for">Mulai di sini · gratis</span>
+      <h3>4 Alat Keuangan Gratis</h3>
+      <p>Template Sheets, cek kebocoran uang, prompt AI, dan kalkulator cicilan.</p>
+      <span class="go">Ambil alatnya →</span>
+    </a>
+    <a class="prod" href="https://rifqiahmadp.orderhero.id/page/peta-gajian">
+      <span class="for">Untuk gaji yang sering kurang sebelum gajian lagi</span>
+      <h3>Peta Gajian</h3>
+      <p>Lihat kapan gajimu berisiko kurang sebelum tanggal bayar tiba, lalu coba ubah rencananya tanpa perlu mencatat belanja satu-satu.</p>
+      <span class="go">Lihat Peta Gajian →</span>
+    </a>
+  </div>
+  <p class="calm">Bukan nasihat keuangan. Detail, harga, dan garansi ada di halaman tiap produk.</p>
+</section>
+
+<div class="duo">
 <section class="sec" aria-labelledby="ikuti">
   <h2 class="label" id="ikuti">Ikuti &amp; hubungi</h2>
   <nav class="links">
@@ -122,6 +167,7 @@ footer{margin-top:40px;text-align:center;font:500 12px/1.6 var(--mono);color:var
     </div>
   </div>
 </section>
+</div>
 
 <footer>© 2026 Rifqi Ahmad Pratama</footer>
 </main>
